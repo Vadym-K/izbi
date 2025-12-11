@@ -9,7 +9,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="stylesheet" href="css/style.css" media="all">
 </head>
-<body class="hidden">
+<body class="no-scroll">
 	<div class="wrapper">
 		<div class="primary-section section">
 			<header class="header">
@@ -28,7 +28,7 @@
 					<a href="#" class="nav-link">Отзывы</a>
 					<a href="#" class="nav-link">Где нас найти</a>
 				</nav>
-				<a href="#" class="btn">ЗАБРОНИРОВАТЬ</a>
+				<a href="#" class="btn js-open-popup">ЗАБРОНИРОВАТЬ</a>
 				<div class="header-contacts">
 					<div class="text-name">Связаться с нами</div>
 					<ul class="contacts-list">
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		<main class="main">
-			<div class="section smoke">
+			<div class="section" id="nashi-izbi-section">
 				<div class="container-md">
 					<h2 class="title title-md">наши ИЗБЫ</h2>
 					<div class="columns">
@@ -158,7 +158,7 @@
 									<b class="price">₽800/ч</b>
 								</div>
 							</div>
-							<a href="#" class="btn btn-second">ЗАБРОНИРОВАТЬ</a>
+							<a href="#" class="btn btn-second js-open-popup">ЗАБРОНИРОВАТЬ</a>
 						</div>
 					</div>
 					<div class="columns">
@@ -190,7 +190,7 @@
 									<b class="price">₽500/ч</b>
 								</div>
 							</div>
-							<a href="#" class="btn">ЗАБРОНИРОВАТЬ</a>
+							<a href="#" class="btn js-open-popup">ЗАБРОНИРОВАТЬ</a>
 						</div>
 						<div class="right-column">
 							<div class="swiper slider js-slider-2">
@@ -275,12 +275,15 @@
 									<b class="price">₽500/ч</b>
 								</div>
 							</div>
-							<a href="#" class="btn">ЗАБРОНИРОВАТЬ</a>
+							<a href="#" class="btn js-open-popup">ЗАБРОНИРОВАТЬ</a>
 						</div>
 					</div>
 				</div>
+				<div id="leaves-right">
+					<img src="img/bg-leaves-right.svg" alt="leaves-right">
+				</div>
 			</div>
-			<div class="section">
+			<div class="section" id="gallery-section">
 				<div class="container-md">
 					<h2 class="title title-md second">Галерея</h2>
 				</div>
@@ -320,6 +323,9 @@
 
 						<div class="swiper-scrollbar gallery-1-scrollbar"></div>
 					</div>
+				</div>
+				<div id="leaves-left">
+					<img src="img/bg-leaves-left.svg" alt="leaves-left">
 				</div>
 			</div>
 			<div class="section">
@@ -569,34 +575,83 @@
 			</svg>
 		</div>
     </div>
-	
-	<div class="popup-wrapper">
+
+	<div class="popup-wrapper active">
+		<div class="popup-overlay"></div>
 		<div class="popup">
-			<div class="popup-content">
-				<button class="booking-close">&times;</button>
-				<h2>Book Your Reservation</h2>
-				<form>
-					<label for="name">Name:</label>
-					<input type="text" id="name" name="name" required>
-
-					<label for="email">Email:</label>
-					<input type="email" id="email" name="email" required>
-
-					<label for="date">Date:</label>
-					<input type="date" id="date" name="date" required>
-
-					<label for="time">Time:</label>
-					<input type="time" id="time" name="time" required>
-
-					<label for="guests">Guests:</label>
-					<input type="number" id="guests" name="guests" min="1" required>
-
-					<button type="submit">Book Now</button>
-				</form>
+			<div class="top-bg">
+				<img src="img/popup-food1.jpg" alt="img" class="img">
+			</div>
+			<div class="popup-container">
+				<button class="popup-close btn-close">
+					<svg class="svg-icon">
+						<use href="#icon-cross"></use>
+					</svg>
+				</button>
+				<h4 class="title title-small title-second">Кухня</h4>
+				<div class="menu-dev">
+					<div class="cols">
+						<div class="left-col">
+							<div class="box"></div>
+						</div>
+						<div class="right-col">
+							<div class="top-box"></div>
+							<div class="md-box-wrap">
+								<div class="box-wrap"></div>
+								<div class="box-wrap"></div>
+								<div class="box-wrap"></div>
+							</div>
+							<div class="bottom-box-wrap">
+								<div class="bottom-box"></div>
+								<div class="bottom-box"></div>
+								<div class="bottom-box"></div>
+							</div>
+						</div>
+					</div>
+					<div class="cols">
+						<div class="left-col">
+							<div class="box"></div>
+						</div>
+						<div class="right-col">
+							<div class="top-box"></div>
+							<div class="md-box-wrap">
+								<div class="box-wrap"></div>
+								<div class="box-wrap"></div>
+								<div class="box-wrap"></div>
+							</div>
+							<div class="bottom-box-wrap">
+								<div class="bottom-box"></div>
+								<div class="bottom-box"></div>
+								<div class="bottom-box"></div>
+							</div>
+						</div>
+					</div>
+					<div class="cols">
+						<div class="left-col">
+							<div class="box"></div>
+						</div>
+						<div class="right-col">
+							<div class="top-box"></div>
+							<div class="md-box-wrap">
+								<div class="box-wrap"></div>
+								<div class="box-wrap"></div>
+								<div class="box-wrap"></div>
+							</div>
+							<div class="bottom-box-wrap">
+								<div class="bottom-box"></div>
+								<div class="bottom-box"></div>
+								<div class="bottom-box"></div>
+							</div>
+						</div>
+					</div>
+					<div class="text-dev">
+						<div class="top">СКоРО...</div>
+						<div class="bottom">Меню находится в разработке</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="js/assets.js"></script>
 	<script src="js/custom.js"></script>

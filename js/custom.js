@@ -1,5 +1,6 @@
 $(function() {
 	toggleSlider(".btn-play");
+	 initPopup(".js-open-popup", ".popup-wrapper");
 });
 
 $(window).on("load", function() {
@@ -12,11 +13,12 @@ $(window).on("load", function() {
 
 	loadingPage();
 	initZoomGallery([".js-slider-1", ".js-slider-2", ".js-slider-3"], ".btn-zoomin");
+	initDropdown();
 });
 
 function loadingPage() {
 	$(".loading-page").remove();
-	$("body").removeClass("hidden");
+	$("body").removeClass("no-scroll");
 }
 
 function initGallery(selector, nextBtn, prevBtn, scrollbar) {
@@ -148,8 +150,34 @@ function initZoomGallery(sliderSelectors, buttonSelector) {
     });
 }
 
+function initDropdown() {
+	$(document).on("click", ".btn-dropdown", function() {
+		var $wrap = $(this).closest(".dropdown-wrap");
 
+		$wrap.toggleClass("open");
+		$wrap.find(".dropdown-list").slideToggle(200);
+	});
+}
 
+function initPopup(openBtnSelector, popupSelector) {
 
+    const $popup = $(popupSelector);
+
+    $(document).on("click", openBtnSelector, function (e) {
+        e.preventDefault();
+        $popup.addClass("active");
+        $("body").addClass("no-scroll");
+    });
+
+    $popup.on("click", ".popup-close", function () {
+        $popup.removeClass("active");
+        $("body").removeClass("no-scroll");
+    });
+
+    $popup.on("click", ".popup-overlay", function () {
+        $popup.removeClass("active");
+        $("body").removeClass("no-scroll");
+    });
+}
 
 
