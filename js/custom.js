@@ -9,7 +9,14 @@ $(window).on("load", function() {
 	initSlider(".js-slider-1");
 	initSlider(".js-slider-2");
 	initSlider(".js-slider-3");
+
+	loadingPage();
 });
+
+function loadingPage() {
+	$(".loading-page").remove();
+	$("body").removeClass("hidden");
+}
 
 function initGallery(selector, nextBtn, prevBtn, scrollbar) {
 
