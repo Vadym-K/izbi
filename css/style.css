@@ -1298,6 +1298,9 @@ body.hidden {
 .lightbox-close {
 	top: 38px;
 	right: 38px;
+}
+
+.btn-close {
 	display: flex;
 	align-items: center;
 	justify-content: center;
