@@ -1,6 +1,7 @@
 $(function() {
 	toggleSlider(".btn-play");
-	 initPopup(".js-open-popup", ".popup-wrapper");
+	initPopup(".js-open-popup", ".popup-wrapper");
+    mobileMenu();
 });
 
 $(window).on("load", function() {
@@ -180,4 +181,9 @@ function initPopup(openBtnSelector, popupSelector) {
     });
 }
 
-
+function mobileMenu() {
+    $(".burger-menu").on("click", function() {
+        var $header = $(".header");
+        $header.toggleClass("active");
+    });
+}
